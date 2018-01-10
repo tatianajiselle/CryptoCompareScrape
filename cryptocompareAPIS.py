@@ -21,14 +21,14 @@ def historicalHour(toTs):
 # the api.
 def main(): 
 
-	# end histrical data date
+	# end historical data date
 	# june 1, 2017 0:00:00 1496275200
 	endTime = 1496275200
 
 	#start historical data date
 	# jan 10, 2018 0:00:00 1515542400
 	startTime = 1515542400	
-	
+
 	date = historicalHour(str(startTime))
 
 	while (int(date) >= endTime):
