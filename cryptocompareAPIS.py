@@ -10,7 +10,8 @@ def saveToFile(data):
 # Call cryptocompare api for historical hour data
 # toTs: timestamp is the to date in epoch time
 # date is the returned TimeFrom (latest date fetched)
-def historicalHour(toTs): 
+# BTC and ETH are fetched
+def histoHour(toTs): 
 	r = requests.get('https://min-api.cryptocompare.com/data/histohour?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=' + toTs).json()
 	print (r)
 	saveToFile(r)
@@ -30,10 +31,10 @@ def main():
 	# jan 10, 2018 0:00:00 1515542400
 	startTime = 1515542400	
 
-	date = historicalHour(str(startTime))
+	date = histoHour(str(startTime))
 
 	while (int(date) >= endTime):
-		date = historicalHour(str(date))
+		date = histoHour(str(date))
 
 
 if __name__ == "__main__":# main()
