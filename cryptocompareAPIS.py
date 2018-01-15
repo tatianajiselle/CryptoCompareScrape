@@ -2,7 +2,7 @@ import requests
 import json
 
 # save data to appendable file
-def saveToFile(data):
+def save_to_file(data):
     f = open('cryptoCompareData.txt', 'a')
     f.write(str(data))
     f.write('\ln')
@@ -12,22 +12,22 @@ def saveToFile(data):
 # toTs: timestamp is the to date in epoch time
 # date is the returned TimeFrom (latest date fetched)
 # BTC and ETH are fetched
-def histoHour(toTs):
+def histo_hour(to_ts):
     r = requests.get(
-        'https://min-api.cryptocompare.com/data/histohour?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=' + toTs).json()
+        'https://min-api.cryptocompare.com/data/histohour?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=' + to_ts).json()
     print(r)
-    saveToFile(r)
+    save_to_file(r)
     return r['TimeFrom']
 
 # Call cryptocompare api for historical day data
 # toTs: timestamp is the to date in epoch time
 # date is the returned TimeFrom (latest date fetched)
 # BTC and ETH are fetched
-def histoDay(toTs):
+def histo_day(to_ts):
     r = requests.get(
-        'https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=' + toTs).json()
+        'https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=BTC&limit=60&aggregate=1&toTs=' + to_ts).json()
     print(r)
-    saveToFile(r)
+    save_to_file(r)
     return r['TimeFrom']
 
 # Starts the historical date with hardcoded date. As long as
@@ -43,13 +43,13 @@ def main():
     # jan 10, 2018 0:00:00 1515542400
     startTime = 1515542400
 
-    # date = histoHour(str(startTime))
+    # date = histo_hour(str(startTime))
     # while (int(date) >= endTime):
-    # 	date = histoHour(str(date))
+    # 	date = histo_hour(str(date))
 
-    date = histoDay(str(startTime))
+    date = histo_day(str(startTime))
     while (int(date) >= endTime):
-    	date = histoDay(str(date))
+    	date = histo_day(str(date))
 
 
 if __name__ == "__main__":  # main()
