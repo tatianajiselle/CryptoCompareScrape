@@ -1,3 +1,8 @@
+# Project uses cryptocompare APIs to scrae historical data
+# Running using virtualenvwrapper
+# Created January 2018
+# By: Tatiana Ensslin
+
 import requests
 import json
 
