@@ -9,7 +9,7 @@ import json
 
 # save data to appendable file
 def save_to_file(data):
-    f = open('Bittrex/CC_HistoDay_BTC_ETH.txt', 'a')
+    f = open('Kraken/CC_HistoHour_ETH_BTC.txt', 'a')
     f.write(str(data))
     f.write('\n')
     return
@@ -93,38 +93,38 @@ def main():
 
 
     # HOURLY ETH to BTC
-    # date = histo_hour_eth_btc(str(startTime), 'Bittrex')
-    # while (int(date) >= endTime):
-    # 	date = histo_hour_eth_btc(str(date), 'Bittrex')
+    date = histo_hour_eth_btc(str(startTime), 'Kraken')
+    while (int(date) >= endTime):
+    	date = histo_hour_eth_btc(str(date), 'Kraken')
 
     # DAILY ETH to BTC
-    # date = histo_day_eth_btc(str(startTime), 'Bittrex')
+    # date = histo_day_eth_btc(str(startTime), 'Kraken')
     # while (int(date) >= endTime):
-    # 	date = histo_day_eth_btc(str(date), 'Bittrex')
+    # 	date = histo_day_eth_btc(str(date), 'Kraken')
 
 
 
     # DAILY BTC to USD
-    # date = histo_day_btc_usd(str(startTime),'Bittrex')
+    # date = histo_day_btc_usd(str(startTime),'Kraken')
     # while (int(date) >= endTime):
-    #     date = histo_day_btc_usd(str(date),'Bittrex')
+    #     date = histo_day_btc_usd(str(date),'Kraken')
 
     # HOURLY BTC to USD
-    # date = histo_hour_btc_usd(str(startTime), 'Bittrex')
+    # date = histo_hour_btc_usd(str(startTime), 'Kraken')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_usd(str(date), 'Bittrex')
+    #     date = histo_hour_btc_usd(str(date), 'Kraken')
 
 
 
     # HOURLY BTC to ETH
-    # date = histo_hour_btc_eth(str(startTime), 'Bittrex')
+    # date = histo_hour_btc_eth(str(startTime), 'Kraken')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_eth(str(date), 'Bittrex')
+    #     date = histo_hour_btc_eth(str(date), 'Kraken')
 
     # DAILY BTC to ETH
-    date = histo_day_btc_eth(str(startTime), 'Bittrex')
-    while (int(date) >= endTime):
-        date = histo_day_btc_eth(str(date), 'Bittrex')
+    # date = histo_day_btc_eth(str(startTime), 'Kraken')
+    # while (int(date) >= endTime):
+    #     date = histo_day_btc_eth(str(date), 'Kraken')
 
 
 if __name__ == "__main__":  # main()
