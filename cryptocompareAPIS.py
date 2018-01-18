@@ -9,7 +9,7 @@ import json
 
 # save data to appendable file
 def save_to_file(data):
-    f = open('gdax/CC_HistoHour_ETH_BTC.txt', 'a')
+    f = open('Binance/CC_HistoDay_BTC_USD.txt', 'a')
     f.write(str(data))
     f.write('\n')
     return
@@ -91,34 +91,34 @@ def main():
     startTime = 1515542400
 
     # HOURLY ETH to BTC
-    date = histo_hour_eth_btc(str(startTime), 'gdax')
-    while (int(date) >= endTime):
-    	date = histo_hour_eth_btc(str(date), 'gdax')
+    # date = histo_hour_eth_btc(str(startTime), 'binance')
+    # while (int(date) >= endTime):
+    # 	date = histo_hour_eth_btc(str(date), 'binance')
 
     # DAILY ETH to BTC
-    # date = histo_day_eth_btc(str(startTime), 'gdax')
+    # date = histo_day_eth_btc(str(startTime), 'binance')
     # while (int(date) >= endTime):
-    # 	date = histo_day_eth_btc(str(date), 'gdax')
+    # 	date = histo_day_eth_btc(str(date), 'binance')
 
     # DAILY BTC to USD
-    # date = histo_day_btc_usd(str(startTime),'gdax')
+    # date = histo_day_btc_usd(str(startTime),'binance')
     # while (int(date) >= endTime):
-    #     date = histo_day_btc_usd(str(date),'gdax')
+    #     date = histo_day_btc_usd(str(date),'binance')
 
     # HOURLY BTC to USD
-    # date = histo_hour_btc_usd(str(startTime), 'gdax')
+    # date = histo_hour_btc_usd(str(startTime), 'binance')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_usd(str(date), 'gdax')
+    #     date = histo_hour_btc_usd(str(date), 'binance')
 
     # HOURLY BTC to ETH
-    # date = histo_hour_btc_eth(str(startTime), 'gdax')
+    # date = histo_hour_btc_eth(str(startTime), 'binance')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_eth(str(date), 'gdax')
+    #     date = histo_hour_btc_eth(str(date), 'binance')
 
     # DAILY BTC to ETH
-    # date = histo_day_btc_eth(str(startTime), 'Poloniex')
-    # while (int(date) >= endTime):
-    #     date = histo_day_btc_eth(str(date), 'Poloniex')
+    date = histo_day_btc_eth(str(startTime), 'binance')
+    while (int(date) >= endTime):
+        date = histo_day_btc_eth(str(date), 'binance')
 
 
 if __name__ == "__main__":  # main()

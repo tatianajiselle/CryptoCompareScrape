@@ -1,1 +1,0 @@
-{'Response': 'Error', 'Message': 'e param is not valid the market does not exist for this coin pair', 'Type': 1, 'Aggregated': False, 'Data': []}
