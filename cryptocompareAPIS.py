@@ -9,13 +9,13 @@ import json
 
 # save data to appendable file
 def save_to_file(data):
-    f = open('Binance/CC_HistoDay_BTC_USD.txt', 'a')
+    f = open('Bittrex/CC_HistoDay_BTC_ETH.txt', 'a')
     f.write(str(data))
     f.write('\n')
     return
 
 #                                                         # 
-#               ETH to BTC are fetched                    #
+#               ETH/BTC are fetched                       #
 #                                                         #
 # toTs: timestamp is the to date in epoch time            #
 # date is the returned TimeFrom (latest date fetched)     #
@@ -37,7 +37,7 @@ def histo_day_eth_btc(to_ts, exchange):
     return r['TimeFrom']
 
 #                                                         # 
-#               BTC to ETH are fetched                    #
+#               BTC/ETH are fetched                       #
 #                                                         #
 # toTs: timestamp is the to date in epoch time            #
 # date is the returned TimeFrom (latest date fetched)     #
@@ -57,7 +57,7 @@ def histo_day_btc_eth(to_ts, exchange):
     return r['TimeFrom']
 
 #                                                         # 
-#               BTC to USD are fetched                    #
+#               BTC/USD are fetched                       #
 #                                                         #
 # toTs: timestamp is the to date in epoch time            #
 # date is the returned TimeFrom (latest date fetched)     #
@@ -90,35 +90,41 @@ def main():
     # jan 10, 2018 0:00:00 1515542400
     startTime = 1515542400
 
+
+
     # HOURLY ETH to BTC
-    # date = histo_hour_eth_btc(str(startTime), 'binance')
+    # date = histo_hour_eth_btc(str(startTime), 'Bittrex')
     # while (int(date) >= endTime):
-    # 	date = histo_hour_eth_btc(str(date), 'binance')
+    # 	date = histo_hour_eth_btc(str(date), 'Bittrex')
 
     # DAILY ETH to BTC
-    # date = histo_day_eth_btc(str(startTime), 'binance')
+    # date = histo_day_eth_btc(str(startTime), 'Bittrex')
     # while (int(date) >= endTime):
-    # 	date = histo_day_eth_btc(str(date), 'binance')
+    # 	date = histo_day_eth_btc(str(date), 'Bittrex')
+
+
 
     # DAILY BTC to USD
-    # date = histo_day_btc_usd(str(startTime),'binance')
+    # date = histo_day_btc_usd(str(startTime),'Bittrex')
     # while (int(date) >= endTime):
-    #     date = histo_day_btc_usd(str(date),'binance')
+    #     date = histo_day_btc_usd(str(date),'Bittrex')
 
     # HOURLY BTC to USD
-    # date = histo_hour_btc_usd(str(startTime), 'binance')
+    # date = histo_hour_btc_usd(str(startTime), 'Bittrex')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_usd(str(date), 'binance')
+    #     date = histo_hour_btc_usd(str(date), 'Bittrex')
+
+
 
     # HOURLY BTC to ETH
-    # date = histo_hour_btc_eth(str(startTime), 'binance')
+    # date = histo_hour_btc_eth(str(startTime), 'Bittrex')
     # while (int(date) >= endTime):
-    #     date = histo_hour_btc_eth(str(date), 'binance')
+    #     date = histo_hour_btc_eth(str(date), 'Bittrex')
 
     # DAILY BTC to ETH
-    date = histo_day_btc_eth(str(startTime), 'binance')
+    date = histo_day_btc_eth(str(startTime), 'Bittrex')
     while (int(date) >= endTime):
-        date = histo_day_btc_eth(str(date), 'binance')
+        date = histo_day_btc_eth(str(date), 'Bittrex')
 
 
 if __name__ == "__main__":  # main()
