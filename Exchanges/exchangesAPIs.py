@@ -44,8 +44,8 @@ def bittrex(trading_pair,time_interval):
 
 def main():
 
- poloniex('BTC_ETH');
-  binance();
+    poloniex('BTC_ETH');
+    binance();
     bittrex('BTC-WAVES', 'oneMin');
     bittrex('BTC-WAVES', 'thirtyMin');
 
