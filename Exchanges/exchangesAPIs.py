@@ -2,7 +2,7 @@
 # Running using virtualenvwrapper
 # Created January 2018
 # By: Tatiana Ensslin
-# Exchanges scraped: Poloniex, gdax, binance, bittrex, kraken, and gemini
+# Exchanges scraped: Poloniex, gdax, binance, bittrex, kraken, and gemini aiming for OHLCV
 
 
 import requests
@@ -67,7 +67,7 @@ def main():
 #    binance();
 #    bittrex('BTC-WAVES', 'oneMin');
 #    bittrex('BTC-WAVES', 'thirtyMin');
-    kraken('XXBTZEUR', '1498867200'); # Saturday, July 1, 2017  init interavl '1383839436659595694' microseconds
+    kraken('XXBTZUSD', '1498867200'); # Saturday, July 1, 2017  init interavl '1383839436659595694' microseconds
 
 if __name__ == "__main__":  # main()
     import sys
