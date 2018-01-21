@@ -50,6 +50,7 @@ def bittrex(trading_pair, time_interval):
     return
 
 # KRAKEN
+# List of asset pairs can be found: `https://api.kraken.com/0/public/AssetPairs`
 def kraken(trading_pair, time_interval):
     r = requests.get('https://api.kraken.com/0/public/Trades?pair='
                      + trading_pair
@@ -67,8 +68,7 @@ def main():
 #    binance();
 #    bittrex('BTC-WAVES', 'oneMin');
 #    bittrex('BTC-WAVES', 'thirtyMin');
-    kraken('XXBTZUSD', '1498867200'); # Saturday, July 1, 2017  init interavl '1383839436659595694' microseconds
-
+    kraken('LTCUSD', '1498867200'); # Saturday, July 1, 2017 LTCUSD, LTCXBT, XXBTZUSD, XXBTZEUR, ETHXBT, ETHUSD
 if __name__ == "__main__":  # main()
     import sys
     main()
