@@ -1,8 +1,8 @@
-# Project uses mulpile exhange APIs to scrape historical data for every minute
-# Running using virtualenvwrapper
+# Project uses mulpile exhange APIs to scrape historical data (OHLCV) for every minute
+# Running using virtualenvwrapper cryptocompare
 # Created January 2018
 # By: Tatiana Ensslin
-# Exchanges scraped: Poloniex, gdax, binance, bittrex, kraken, and gemini aiming for OHLCV
+# Exchanges scraped: Poloniex, binance, bittrex, kraken (MIA: gdax, gemini)
 
 
 import requests
@@ -51,6 +51,7 @@ def bittrex(trading_pair, time_interval):
 
 # KRAKEN
 # List of asset pairs can be found: `https://api.kraken.com/0/public/AssetPairs`
+# Fetched pairs: XBTEUR, LTCUSD, LTCXBT, XXBTZUSD, XXBTZEUR, ETHXBT, ETHUSD
 def kraken(trading_pair, time_interval):
     r = requests.get('https://api.kraken.com/0/public/Trades?pair='
                      + trading_pair
@@ -68,7 +69,8 @@ def main():
 #    binance();
 #    bittrex('BTC-WAVES', 'oneMin');
 #    bittrex('BTC-WAVES', 'thirtyMin');
-    kraken('LTCUSD', '1498867200'); # Saturday, July 1, 2017 LTCUSD, LTCXBT, XXBTZUSD, XXBTZEUR, ETHXBT, ETHUSD
+     kraken('XBTEUR', '1498867200'); # Saturday, July 1, 2017
+
 if __name__ == "__main__":  # main()
     import sys
     main()
